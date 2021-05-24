@@ -26,4 +26,4 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
       - name: Test with Gradle
-        run: ./gradlew test
+        run: ./gradlew test --tests MyStepdefinitions
