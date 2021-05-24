@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TopUp Account" tests="13" skipped="0" failures="0" errors="0" timestamp="2021-05-24T19:57:55" hostname="DESKTOP-DIBDH3J" time="0.907">
+  <properties/>
+  <testcase name="Add money to Revolut account using debit card #1" classname="TopUp Account" time="0.516"/>
+  <testcase name="Add money to Revolut account using debit card #2" classname="TopUp Account" time="0.041"/>
+  <testcase name="Add various amounts to Revolut account #1" classname="TopUp Account" time="0.035"/>
+  <testcase name="Add various amounts to Revolut account #2" classname="TopUp Account" time="0.04"/>
+  <testcase name="Add various amounts to Revolut account #3" classname="TopUp Account" time="0.016"/>
+  <testcase name="Payment service rejects the request #1" classname="TopUp Account" time="0.017"/>
+  <testcase name="Payment service rejects the request #2" classname="TopUp Account" time="0.044"/>
+  <testcase name="Payment service rejects the request #3" classname="TopUp Account" time="0.046"/>
+  <testcase name="Payment service accepts the request #1" classname="TopUp Account" time="0.02"/>
+  <testcase name="Payment service accepts the request #2" classname="TopUp Account" time="0.044"/>
+  <testcase name="Payment service accepts the request #3" classname="TopUp Account" time="0.047"/>
+  <testcase name="Danny wants to Convert EUR to USD" classname="TopUp Account" time="0.02"/>
+  <testcase name="Sending money to a friend using Revolut" classname="TopUp Account" time="0.009"/>
+  <system-out><![CDATA[
+Scenario: Add money to Revolut account using debit card      ?[90m# features/TopUp.feature:6?[0m
+  ?[32mGiven ?[0m?[32mDanny has ?[0m?[32m?[1m10?[0m?[32m euro in his euro Revolut account?[0m        ?[90m# features.MyStepdefinitions.dannyHasEuroInHisEuroRevolutAccount(double)?[0m
+  ?[32mAnd ?[0m?[32mDanny selects ?[0m?[32m?[1m100?[0m?[32m euro as the topUp amount?[0m             ?[90m# features.MyStepdefinitions.danny_selects_euro_as_the_top_up_amount(double)?[0m
+DebitCard
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mDebitCard?[0m?[32m as his topUp method?[0m        ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mWhen ?[0m?[32mDanny tops up?[0m                                         ?[90m# features.MyStepdefinitions.danny_tops_up()?[0m
+  ?[32mThen ?[0m?[32mThe new balance of his euro account should now be ?[0m?[32m?[1m110?[0m ?[90m# features.MyStepdefinitions.the_new_balance_of_his_euro_account_should_now_be(double)?[0m
+
+Scenario: Add money to Revolut account using debit card      ?[90m# features/TopUp.feature:15?[0m
+  ?[32mGiven ?[0m?[32mDanny has ?[0m?[32m?[1m20?[0m?[32m euro in his euro Revolut account?[0m        ?[90m# features.MyStepdefinitions.dannyHasEuroInHisEuroRevolutAccount(double)?[0m
+  ?[32mAnd ?[0m?[32mDanny selects ?[0m?[32m?[1m200?[0m?[32m euro as the topUp amount?[0m             ?[90m# features.MyStepdefinitions.danny_selects_euro_as_the_top_up_amount(double)?[0m
+BankAccount
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mBankAccount?[0m?[32m as his topUp method?[0m      ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mWhen ?[0m?[32mDanny tops up?[0m                                         ?[90m# features.MyStepdefinitions.danny_tops_up()?[0m
+  ?[32mThen ?[0m?[32mThe new balance of his euro account should now be ?[0m?[32m?[1m220?[0m ?[90m# features.MyStepdefinitions.the_new_balance_of_his_euro_account_should_now_be(double)?[0m
+
+Scenario Outline: Add various amounts to Revolut account ?[90m# features/TopUp.feature:30?[0m
+  ?[32mGiven ?[0m?[32mDanny has a starting balance of ?[0m?[32m?[1m0?[0m                ?[90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)?[0m
+DebitCard
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mDebitCard?[0m?[32m as his topUp method?[0m    ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mWhen ?[0m?[32mDanny now tops up by ?[0m?[32m?[1m100.0?[0m                        ?[90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)?[0m
+  ?[32mThen ?[0m?[32mThe balance in his euro account should be ?[0m?[32m?[1m100.0?[0m   ?[90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)?[0m
+
+Scenario Outline: Add various amounts to Revolut account ?[90m# features/TopUp.feature:31?[0m
+  ?[32mGiven ?[0m?[32mDanny has a starting balance of ?[0m?[32m?[1m14.0?[0m             ?[90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)?[0m
+DebitCard
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mDebitCard?[0m?[32m as his topUp method?[0m    ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mWhen ?[0m?[32mDanny now tops up by ?[0m?[32m?[1m20.0?[0m                         ?[90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)?[0m
+  ?[32mThen ?[0m?[32mThe balance in his euro account should be ?[0m?[32m?[1m34.0?[0m    ?[90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)?[0m
+
+Scenario Outline: Add various amounts to Revolut account ?[90m# features/TopUp.feature:32?[0m
+  ?[32mGiven ?[0m?[32mDanny has a starting balance of ?[0m?[32m?[1m23.0?[0m             ?[90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)?[0m
+DebitCard
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mDebitCard?[0m?[32m as his topUp method?[0m    ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mWhen ?[0m?[32mDanny now tops up by ?[0m?[32m?[1m30.0?[0m                         ?[90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)?[0m
+  ?[32mThen ?[0m?[32mThe balance in his euro account should be ?[0m?[32m?[1m53.0?[0m    ?[90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)?[0m
+
+Scenario Outline: Payment service rejects the request ?[90m# features/TopUp.feature:43?[0m
+  ?[32mGiven ?[0m?[32mDanny has a starting balance of ?[0m?[32m?[1m0?[0m             ?[90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)?[0m
+DebitCard
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mDebitCard?[0m?[32m as his topUp method?[0m ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mAnd ?[0m?[32mDanny has insufficient amount in his DebitCard?[0m  ?[90m# features.MyStepdefinitions.dannyHasInsufficientAmountInHisDebitCard()?[0m
+  ?[32mWhen ?[0m?[32mDanny now tops up by ?[0m?[32m?[1m100.0?[0m                     ?[90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)?[0m
+  ?[32mThen ?[0m?[32mThe balance in his euro account should be ?[0m?[32m?[1m0?[0m    ?[90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)?[0m
+
+Scenario Outline: Payment service rejects the request ?[90m# features/TopUp.feature:44?[0m
+  ?[32mGiven ?[0m?[32mDanny has a starting balance of ?[0m?[32m?[1m14.0?[0m          ?[90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)?[0m
+DebitCard
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mDebitCard?[0m?[32m as his topUp method?[0m ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mAnd ?[0m?[32mDanny has insufficient amount in his DebitCard?[0m  ?[90m# features.MyStepdefinitions.dannyHasInsufficientAmountInHisDebitCard()?[0m
+  ?[32mWhen ?[0m?[32mDanny now tops up by ?[0m?[32m?[1m20.0?[0m                      ?[90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)?[0m
+  ?[32mThen ?[0m?[32mThe balance in his euro account should be ?[0m?[32m?[1m14.0?[0m ?[90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)?[0m
+
+Scenario Outline: Payment service rejects the request ?[90m# features/TopUp.feature:45?[0m
+  ?[32mGiven ?[0m?[32mDanny has a starting balance of ?[0m?[32m?[1m23.0?[0m          ?[90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)?[0m
+DebitCard
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mDebitCard?[0m?[32m as his topUp method?[0m ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mAnd ?[0m?[32mDanny has insufficient amount in his DebitCard?[0m  ?[90m# features.MyStepdefinitions.dannyHasInsufficientAmountInHisDebitCard()?[0m
+  ?[32mWhen ?[0m?[32mDanny now tops up by ?[0m?[32m?[1m30.0?[0m                      ?[90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)?[0m
+  ?[32mThen ?[0m?[32mThe balance in his euro account should be ?[0m?[32m?[1m23.0?[0m ?[90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)?[0m
+
+Scenario Outline: Payment service accepts the request  ?[90m# features/TopUp.feature:55?[0m
+  ?[32mGiven ?[0m?[32mDanny has a starting balance of ?[0m?[32m?[1m0?[0m              ?[90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)?[0m
+DebitCard
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mDebitCard?[0m?[32m as his topUp method?[0m  ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mAnd ?[0m?[32mDanny has sufficient amount in his DebitCard?[0m     ?[90m# features.MyStepdefinitions.dannyHasSufficientAmountInHisDebitCard()?[0m
+  ?[32mWhen ?[0m?[32mDanny now tops up by ?[0m?[32m?[1m100.0?[0m                      ?[90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)?[0m
+  ?[32mThen ?[0m?[32mThe balance in his euro account should be ?[0m?[32m?[1m100.0?[0m ?[90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)?[0m
+
+Scenario Outline: Payment service accepts the request ?[90m# features/TopUp.feature:56?[0m
+  ?[32mGiven ?[0m?[32mDanny has a starting balance of ?[0m?[32m?[1m14.0?[0m          ?[90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)?[0m
+DebitCard
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mDebitCard?[0m?[32m as his topUp method?[0m ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mAnd ?[0m?[32mDanny has sufficient amount in his DebitCard?[0m    ?[90m# features.MyStepdefinitions.dannyHasSufficientAmountInHisDebitCard()?[0m
+  ?[32mWhen ?[0m?[32mDanny now tops up by ?[0m?[32m?[1m20.0?[0m                      ?[90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)?[0m
+  ?[32mThen ?[0m?[32mThe balance in his euro account should be ?[0m?[32m?[1m34.0?[0m ?[90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)?[0m
+
+Scenario Outline: Payment service accepts the request ?[90m# features/TopUp.feature:57?[0m
+  ?[32mGiven ?[0m?[32mDanny has a starting balance of ?[0m?[32m?[1m23.0?[0m          ?[90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)?[0m
+DebitCard
+  ?[32mAnd ?[0m?[32mDanny selects his ?[0m?[32m?[1mDebitCard?[0m?[32m as his topUp method?[0m ?[90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)?[0m
+  ?[32mAnd ?[0m?[32mDanny has sufficient amount in his DebitCard?[0m    ?[90m# features.MyStepdefinitions.dannyHasSufficientAmountInHisDebitCard()?[0m
+  ?[32mWhen ?[0m?[32mDanny now tops up by ?[0m?[32m?[1m30.0?[0m                      ?[90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)?[0m
+  ?[32mThen ?[0m?[32mThe balance in his euro account should be ?[0m?[32m?[1m53.0?[0m ?[90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)?[0m
+
+Scenario: Danny wants to Convert EUR to USD                                           ?[90m# features/TopUp.feature:59?[0m
+  ?[32mGiven ?[0m?[32mDanny has ?[0m?[32m?[1m20?[0m?[32m euro in his euro Revolut account?[0m                                 ?[90m# features.MyStepdefinitions.dannyHasEuroInHisEuroRevolutAccount(double)?[0m
+  ?[32mWhen ?[0m?[32mDanny exchanges ?[0m?[32m?[1m10?[0m?[32m euro to USD with an exchange rate of ?[0m?[32m?[1m1.20?[0m                   ?[90m# features.MyStepdefinitions.dannyExchangesEuroToUSDWithAnExchangeRateOf(double,double)?[0m
+  ?[32mThen ?[0m?[32mThe balance in his USD account should be ?[0m?[32m?[1m12?[0m?[32m and his euro account should be ?[0m?[32m?[1m10?[0m?[32m.?[0m ?[90m# features.MyStepdefinitions.theBalanceInHisUSDAccountShouldBeAndHisEuroAccountShouldBe(int,int)?[0m
+
+Scenario: Sending money to a friend using Revolut                                                  ?[90m# features/TopUp.feature:64?[0m
+  ?[32mGiven ?[0m?[32mDanny has ?[0m?[32m?[1m20?[0m?[32m euro in his euro Revolut account?[0m                                              ?[90m# features.MyStepdefinitions.dannyHasEuroInHisEuroRevolutAccount(double)?[0m
+  ?[32mWhen ?[0m?[32mDanny sends ?[0m?[32m?[1m10?[0m?[32m euro to Sarah's account?[0m                                                      ?[90m# features.MyStepdefinitions.dannySendsEuroToSarahSAccount(double)?[0m
+  ?[32mThen ?[0m?[32mThe new balance of his euro account should now be ?[0m?[32m?[1m10?[0m?[32m and Sarah's account should have be ?[0m?[32m?[1m10?[0m?[32m.?[0m ?[90m# features.MyStepdefinitions.theNewBalanceOfHisEuroAccountShouldNowBeAndSarahSAccountShouldHaveBe(double,double)?[0m
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

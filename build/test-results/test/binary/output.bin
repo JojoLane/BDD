@@ -1,0 +1,119 @@
+
+aScenario: Add money to Revolut account using debit card      [90m# features/TopUp.feature:6[0m
+∑  [32mGiven [0m[32mDanny has [0m[32m[1m10[0m[32m euro in his euro Revolut account[0m        [90m# features.MyStepdefinitions.dannyHasEuroInHisEuroRevolutAccount(double)[0m
+ª  [32mAnd [0m[32mDanny selects [0m[32m[1m100[0m[32m euro as the topUp amount[0m             [90m# features.MyStepdefinitions.danny_selects_euro_as_the_top_up_amount(double)[0m
+DebitCard
+’  [32mAnd [0m[32mDanny selects his [0m[32m[1mDebitCard[0m[32m as his topUp method[0m        [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+Ö  [32mWhen [0m[32mDanny tops up[0m                                         [90m# features.MyStepdefinitions.danny_tops_up()[0m
+º  [32mThen [0m[32mThe new balance of his euro account should now be [0m[32m[1m110[0m [90m# features.MyStepdefinitions.the_new_balance_of_his_euro_account_should_now_be(double)[0m
+
+bScenario: Add money to Revolut account using debit card      [90m# features/TopUp.feature:15[0m
+∑  [32mGiven [0m[32mDanny has [0m[32m[1m20[0m[32m euro in his euro Revolut account[0m        [90m# features.MyStepdefinitions.dannyHasEuroInHisEuroRevolutAccount(double)[0m
+ª  [32mAnd [0m[32mDanny selects [0m[32m[1m200[0m[32m euro as the topUp amount[0m             [90m# features.MyStepdefinitions.danny_selects_euro_as_the_top_up_amount(double)[0m
+BankAccount
+’  [32mAnd [0m[32mDanny selects his [0m[32m[1mBankAccount[0m[32m as his topUp method[0m      [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+Ö  [32mWhen [0m[32mDanny tops up[0m                                         [90m# features.MyStepdefinitions.danny_tops_up()[0m
+º  [32mThen [0m[32mThe new balance of his euro account should now be [0m[32m[1m220[0m [90m# features.MyStepdefinitions.the_new_balance_of_his_euro_account_should_now_be(double)[0m
+
+^Scenario Outline: Add various amounts to Revolut account [90m# features/TopUp.feature:30[0m
+≠  [32mGiven [0m[32mDanny has a starting balance of [0m[32m[1m0[0m                [90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)[0m
+DebitCard
+—  [32mAnd [0m[32mDanny selects his [0m[32m[1mDebitCard[0m[32m as his topUp method[0m    [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+¢  [32mWhen [0m[32mDanny now tops up by [0m[32m[1m100.0[0m                        [90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)[0m
+≥  [32mThen [0m[32mThe balance in his euro account should be [0m[32m[1m100.0[0m   [90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)[0m
+
+^Scenario Outline: Add various amounts to Revolut account [90m# features/TopUp.feature:31[0m
+≠  [32mGiven [0m[32mDanny has a starting balance of [0m[32m[1m14.0[0m             [90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)[0m
+DebitCard
+—  [32mAnd [0m[32mDanny selects his [0m[32m[1mDebitCard[0m[32m as his topUp method[0m    [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+¢  [32mWhen [0m[32mDanny now tops up by [0m[32m[1m20.0[0m                         [90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)[0m
+≥  [32mThen [0m[32mThe balance in his euro account should be [0m[32m[1m34.0[0m    [90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)[0m
+
+^Scenario Outline: Add various amounts to Revolut account [90m# features/TopUp.feature:32[0m
+≠  [32mGiven [0m[32mDanny has a starting balance of [0m[32m[1m23.0[0m             [90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)[0m
+DebitCard
+—  [32mAnd [0m[32mDanny selects his [0m[32m[1mDebitCard[0m[32m as his topUp method[0m    [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+¢  [32mWhen [0m[32mDanny now tops up by [0m[32m[1m30.0[0m                         [90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)[0m
+≥  [32mThen [0m[32mThe balance in his euro account should be [0m[32m[1m53.0[0m    [90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)[0m
+
+[Scenario Outline: Payment service rejects the request [90m# features/TopUp.feature:43[0m
+™  [32mGiven [0m[32mDanny has a starting balance of [0m[32m[1m0[0m             [90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)[0m
+DebitCard
+Œ  [32mAnd [0m[32mDanny selects his [0m[32m[1mDebitCard[0m[32m as his topUp method[0m [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+ô  [32mAnd [0m[32mDanny has insufficient amount in his DebitCard[0m  [90m# features.MyStepdefinitions.dannyHasInsufficientAmountInHisDebitCard()[0m
+ü  [32mWhen [0m[32mDanny now tops up by [0m[32m[1m100.0[0m                     [90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)[0m
+∞  [32mThen [0m[32mThe balance in his euro account should be [0m[32m[1m0[0m    [90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)[0m
+
+[Scenario Outline: Payment service rejects the request [90m# features/TopUp.feature:44[0m
+™  [32mGiven [0m[32mDanny has a starting balance of [0m[32m[1m14.0[0m          [90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)[0m
+DebitCard
+Œ  [32mAnd [0m[32mDanny selects his [0m[32m[1mDebitCard[0m[32m as his topUp method[0m [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+ô  [32mAnd [0m[32mDanny has insufficient amount in his DebitCard[0m  [90m# features.MyStepdefinitions.dannyHasInsufficientAmountInHisDebitCard()[0m
+ü  [32mWhen [0m[32mDanny now tops up by [0m[32m[1m20.0[0m                      [90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)[0m
+∞  [32mThen [0m[32mThe balance in his euro account should be [0m[32m[1m14.0[0m [90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)[0m
+	
+	[Scenario Outline: Payment service rejects the request [90m# features/TopUp.feature:45[0m
+	™  [32mGiven [0m[32mDanny has a starting balance of [0m[32m[1m23.0[0m          [90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)[0m
+	DebitCard
+	Œ  [32mAnd [0m[32mDanny selects his [0m[32m[1mDebitCard[0m[32m as his topUp method[0m [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+	ô  [32mAnd [0m[32mDanny has insufficient amount in his DebitCard[0m  [90m# features.MyStepdefinitions.dannyHasInsufficientAmountInHisDebitCard()[0m
+	ü  [32mWhen [0m[32mDanny now tops up by [0m[32m[1m30.0[0m                      [90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)[0m
+	∞  [32mThen [0m[32mThe balance in his euro account should be [0m[32m[1m23.0[0m [90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)[0m
+
+
+
+\Scenario Outline: Payment service accepts the request  [90m# features/TopUp.feature:55[0m
+
+´  [32mGiven [0m[32mDanny has a starting balance of [0m[32m[1m0[0m              [90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)[0m
+
+DebitCard
+
+œ  [32mAnd [0m[32mDanny selects his [0m[32m[1mDebitCard[0m[32m as his topUp method[0m  [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+
+ò  [32mAnd [0m[32mDanny has sufficient amount in his DebitCard[0m     [90m# features.MyStepdefinitions.dannyHasSufficientAmountInHisDebitCard()[0m
+
+†  [32mWhen [0m[32mDanny now tops up by [0m[32m[1m100.0[0m                      [90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)[0m
+
+±  [32mThen [0m[32mThe balance in his euro account should be [0m[32m[1m100.0[0m [90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)[0m
+
+[Scenario Outline: Payment service accepts the request [90m# features/TopUp.feature:56[0m
+™  [32mGiven [0m[32mDanny has a starting balance of [0m[32m[1m14.0[0m          [90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)[0m
+DebitCard
+Œ  [32mAnd [0m[32mDanny selects his [0m[32m[1mDebitCard[0m[32m as his topUp method[0m [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+ó  [32mAnd [0m[32mDanny has sufficient amount in his DebitCard[0m    [90m# features.MyStepdefinitions.dannyHasSufficientAmountInHisDebitCard()[0m
+ü  [32mWhen [0m[32mDanny now tops up by [0m[32m[1m20.0[0m                      [90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)[0m
+∞  [32mThen [0m[32mThe balance in his euro account should be [0m[32m[1m34.0[0m [90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)[0m
+
+[Scenario Outline: Payment service accepts the request [90m# features/TopUp.feature:57[0m
+™  [32mGiven [0m[32mDanny has a starting balance of [0m[32m[1m23.0[0m          [90m# features.MyStepdefinitions.dannyHasAStartingBalanceOfStartBalance(double)[0m
+DebitCard
+Œ  [32mAnd [0m[32mDanny selects his [0m[32m[1mDebitCard[0m[32m as his topUp method[0m [90m# features.MyStepdefinitions.danny_selects_his_debit_card_as_his_top_up_method(Revolut.PaymentService)[0m
+ó  [32mAnd [0m[32mDanny has sufficient amount in his DebitCard[0m    [90m# features.MyStepdefinitions.dannyHasSufficientAmountInHisDebitCard()[0m
+ü  [32mWhen [0m[32mDanny now tops up by [0m[32m[1m30.0[0m                      [90m# features.MyStepdefinitions.dannyNowTopsUpByTopUpAmount(double)[0m
+∞  [32mThen [0m[32mThe balance in his euro account should be [0m[32m[1m53.0[0m [90m# features.MyStepdefinitions.theBalanceInHisEuroAccountShouldBeNewBalance(double)[0m
+
+{Scenario: Danny wants to Convert EUR to USD                                           [90m# features/TopUp.feature:59[0m
+–  [32mGiven [0m[32mDanny has [0m[32m[1m20[0m[32m euro in his euro Revolut account[0m                                 [90m# features.MyStepdefinitions.dannyHasEuroInHisEuroRevolutAccount(double)[0m
+Ï  [32mWhen [0m[32mDanny exchanges [0m[32m[1m10[0m[32m euro to USD with an exchange rate of [0m[32m[1m1.20[0m                   [90m# features.MyStepdefinitions.dannyExchangesEuroToUSDWithAnExchangeRateOf(double,double)[0m
+˛  [32mThen [0m[32mThe balance in his USD account should be [0m[32m[1m12[0m[32m and his euro account should be [0m[32m[1m10[0m[32m.[0m [90m# features.MyStepdefinitions.theBalanceInHisUSDAccountShouldBeAndHisEuroAccountShouldBe(int,int)[0m
+
+àScenario: Sending money to a friend using Revolut                                                  [90m# features/TopUp.feature:64[0m
+›  [32mGiven [0m[32mDanny has [0m[32m[1m20[0m[32m euro in his euro Revolut account[0m                                              [90m# features.MyStepdefinitions.dannyHasEuroInHisEuroRevolutAccount(double)[0m
+◊  [32mWhen [0m[32mDanny sends [0m[32m[1m10[0m[32m euro to Sarah's account[0m                                                      [90m# features.MyStepdefinitions.dannySendsEuroToSarahSAccount(double)[0m
+õ  [32mThen [0m[32mThe new balance of his euro account should now be [0m[32m[1m10[0m[32m and Sarah's account should have be [0m[32m[1m10[0m[32m.[0m [90m# features.MyStepdefinitions.theNewBalanceOfHisEuroAccountShouldNowBeAndSarahSAccountShouldHaveBe(double,double)[0m
+  c[32m[1m?????????????????????????????????????????????????????????????????????????????????????[0m
+  Å[32m[1m?[0m Share your Cucumber Report with your team at [36m[1m[4mhttps://reports.cucumber.io[0m          [32m[1m?[0m
+  p[32m[1m?[0m Activate publishing with one of the following:                                    [32m[1m?[0m
+  p[32m[1m?[0m                                                                                   [32m[1m?[0m
+  Ç[32m[1m?[0m src/test/resources/cucumber.properties:          [36mcucumber.publish.enabled[0m=[36mtrue[0m    [32m[1m?[0m
+  Ç[32m[1m?[0m src/test/resources/junit-platform.properties:    [36mcucumber.publish.enabled[0m=[36mtrue[0m    [32m[1m?[0m
+  Ç[32m[1m?[0m Environment variable:                            [36mCUCUMBER_PUBLISH_ENABLED[0m=[36mtrue[0m    [32m[1m?[0m
+  Ç[32m[1m?[0m JUnit:                                           [36m@CucumberOptions[0m(publish = [36mtrue[0m) [32m[1m?[0m
+  p[32m[1m?[0m                                                                                   [32m[1m?[0m
+  y[32m[1m?[0m More information at [36mhttps://reports.cucumber.io/docs/cucumber-jvm[0m                 [32m[1m?[0m
+  p[32m[1m?[0m                                                                                   [32m[1m?[0m
+  p[32m[1m?[0m Disable this message with one of the following:                                   [32m[1m?[0m
+  p[32m[1m?[0m                                                                                   [32m[1m?[0m
+  Ç[32m[1m?[0m src/test/resources/cucumber.properties:          [36mcucumber.publish.quiet[0m=[36mtrue[0m      [32m[1m?[0m
+  Ç[32m[1m?[0m src/test/resources/junit-platform.properties:    [36mcucumber.publish.quiet[0m=[36mtrue[0m      [32m[1m?[0m
+  c[32m[1m?????????????????????????????????????????????????????????????????????????????????????[0m
